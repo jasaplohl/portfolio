@@ -68,6 +68,11 @@ defineProps({
     background-color: rgba(black, 0.7);
     padding: 0.5rem;
     transition: opacity 0.5s;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &__container {
       display: flex;
@@ -92,5 +97,6 @@ defineProps({
   padding-block: 0.5rem;
   border-radius: 1rem;
   user-select: none;
+  word-break: break-all;
 }
 </style>
