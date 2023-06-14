@@ -20,7 +20,7 @@ export const projects: Project[] = [
     },
     {
         title: 'WhiteHydrogen platform',
-        imgUrl: '/images/projects/white_hydrogen_dashboard.png',
+        imgUrl: '/images/projects/white_hydrogen_platform.png',
         technologies: ['VueJS', 'AWS', 'Stripe', 'Blockchain', 'Onfido', 'Tatum']
     },
     {

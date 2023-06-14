@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getTechnologies } from '@/data/technologies';
+import { getTechnologiesString } from '@/data/technologies';
 import type {Ref} from "vue";
 import {onMounted, ref} from "vue";
 
@@ -16,7 +16,7 @@ const initCanvas = (canvas: HTMLCanvasElement) => {
   canvas.height = window.innerHeight;
   const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
 
-  const letters = getTechnologies().split('');
+  const letters = getTechnologiesString().split('');
   const fontSize: number = 10;
   const columns: number = canvas.width / fontSize;
 
