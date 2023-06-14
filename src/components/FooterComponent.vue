@@ -1,7 +1,19 @@
 <template>
-  <div>
-    <p>Contact information:</p>
-    <p>Linkedin, GitHub, email...</p>
+  <div class="footer">
+    <div>
+      <p>Contact information:</p>
+      <p>Linkedin, GitHub, email...</p>
+    </div>
+    <p class="text-end">Built with VueJS and Tailwind.</p>
   </div>
-  <p>Built with: VueJS, Tailwind</p>
 </template>
+
+<style lang="scss" scoped>
+@import "src/assets/styles/variables";
+
+.footer {
+  background-color: $color-primary;
+  color: $color-secondary;
+  padding: 1rem;
+}
+</style>
