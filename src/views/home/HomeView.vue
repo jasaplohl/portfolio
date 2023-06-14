@@ -3,6 +3,7 @@ import IntroductionComponent from "@/views/home/components/IntroductionComponent
 import FooterComponent from "@/components/FooterComponent.vue";
 import ProjectsComponent from "@/views/home/components/ProjectsComponent.vue";
 import TechnologiesComponent from "@/views/home/components/TechnologiesComponent.vue";
+import ContactComponent from "@/views/home/components/ContactComponent.vue";
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import TechnologiesComponent from "@/views/home/components/TechnologiesComponent
     <IntroductionComponent />
     <ProjectsComponent />
     <TechnologiesComponent />
+    <ContactComponent />
     <FooterComponent />
   </main>
 </template>
