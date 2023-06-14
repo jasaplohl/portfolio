@@ -1,5 +1,5 @@
 <template>
-  <div class="page page--center">
+  <div class="page page--center page--gradient-secondary">
     <h2>Some technologies I have experience with</h2>
     <div class="col">
       <p>Frontend frameworks: VueJS, Angular, Flutter, ReactNative</p>

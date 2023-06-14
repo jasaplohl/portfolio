@@ -4,7 +4,7 @@ import ProjectCardComponent from "@/views/home/components/ProjectCardComponent.v
 </script>
 
 <template>
-  <div class="page page--center page--alternate">
+  <div class="page page--center page--gradient-primary">
     <h2>This are some of the projects I have worked on</h2>
     <ul>
       <ProjectCardComponent

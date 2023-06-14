@@ -51,9 +51,12 @@ h2 {
     justify-content: center;
   }
 
-  &--alternate {
-    background-color: $color-primary;
-    color: $color-secondary;
+  &--gradient-primary {
+    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+  }
+
+  &--gradient-secondary {
+    background: linear-gradient(0deg, $color-secondary 0%, $color-primary 100%);
   }
 }
 
