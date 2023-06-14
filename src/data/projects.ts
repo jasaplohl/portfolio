@@ -8,19 +8,24 @@ interface Project {
 export const projects: Project[] = [
     {
         title: 'WhiteHydrogen website',
-        imgUrl: '@src/assets/images/projects/white_hydrogen_website.png',
+        imgUrl: '/images/projects/white_hydrogen_website.png',
         url: 'https://www.whiteh2coin.com/',
         technologies: ['VueJS', 'AWS']
     },
     {
         title: 'WhiteHydrogen dashboard',
-        imgUrl: '@src/assets/images/projects/white_hydrogen_dashboard.png',
+        imgUrl: '/images/projects/white_hydrogen_dashboard.png',
         url: 'https://app.whiteh2coin.com/',
         technologies: ['Python', 'Django', 'Blockchain']
     },
     {
+        title: 'WhiteHydrogen platform',
+        imgUrl: '/images/projects/white_hydrogen_dashboard.png',
+        technologies: ['VueJS', 'AWS', 'Stripe', 'Blockchain', 'Onfido', 'Tatum']
+    },
+    {
         title: 'NFT minting platform',
-        imgUrl: '@src/assets/images/projects/mint_website.png',
+        imgUrl: '/images/projects/mint_website.png',
         url: 'https://mint.devleet.si',
         technologies: ['VueJS', 'Blockchain']
     }
@@ -29,14 +34,14 @@ export const projects: Project[] = [
 export const personalProjects: Project[] = [
     {
         title: 'MovieWatch',
-        imgUrl: '@src/assets/images/projects/movie_watch.png',
+        imgUrl: '/images/projects/movie_watch.png',
         url: 'https://jasaplohl.github.io/movie-watch/',
         technologies: ['Angular', 'Github pages']
     },
     {
         title: 'MovieNight',
         // TODO: upload apk
-        imgUrl: '@src/assets/images/projects/movie_night.png',
+        imgUrl: '/images/projects/movie_night.png',
         technologies: ['Flutter', 'Firebase']
     }
 ];

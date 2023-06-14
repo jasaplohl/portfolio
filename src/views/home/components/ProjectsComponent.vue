@@ -1,24 +1,40 @@
 <script lang="ts" setup>
 import {personalProjects, projects} from "@/data/projects";
+import ProjectCardComponent from "@/views/home/components/ProjectCardComponent.vue";
 </script>
 
 <template>
   <div class="page page--center page--alternate">
     <h2>This are some of the projects I have worked on</h2>
     <ul>
-      <li :key="project.title" v-for="project of projects">
-        <p>{{ project.title }}</p>
-<!--        <p>WhiteHydrogen (VueJS, AWS, Stripe, Blockchain, Onfido, Tatum ...)</p>-->
-<!--        <p>Devleet minting website (VueJS, blockchain)</p>-->
-<!--        <p>MovieNight (Flutter, TMDB api, Firebase)</p>-->
-<!--        <p>MovieWatch (Angular, TMDB api)</p>-->
-      </li>
+      <ProjectCardComponent
+          v-for="project of projects"
+          :key="project.title"
+          :title="project.title"
+          :technologies="project.technologies"
+          :thumbnail="project.imgUrl"
+          :url="project.url"
+      />
     </ul>
     <h2>Personal projects</h2>
     <ul>
-      <li :key="project.title" v-for="project of personalProjects">
-        <p>{{ project.title }}</p>
-      </li>
+      <ProjectCardComponent
+          v-for="project of personalProjects"
+          :key="project.title"
+          :title="project.title"
+          :technologies="project.technologies"
+          :thumbnail="project.imgUrl"
+          :url="project.url"
+      />
     </ul>
   </div>
 </template>
+
+<style lang="scss" scoped>
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>
