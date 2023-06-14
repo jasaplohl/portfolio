@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import IntroductionComponent from "@/views/home/components/IntroductionComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import ProjectsComponent from "@/views/home/components/ProjectsComponent.vue";
+</script>
 
 <template>
   <main>
-    <h1>Hello world</h1>
+    <IntroductionComponent />
+    <ProjectsComponent />
+    <FooterComponent />
   </main>
 </template>
