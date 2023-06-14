@@ -89,14 +89,4 @@ defineProps({
     }
   }
 }
-
-.pill {
-  background-color: $color-primary;
-  color: $color-secondary;
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
-  border-radius: 1rem;
-  user-select: none;
-  word-break: break-all;
-}
 </style>

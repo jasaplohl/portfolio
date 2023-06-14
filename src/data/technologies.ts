@@ -5,9 +5,9 @@ interface Technology {
 
 const technologies: Technology[] = [
     {
-        group: 'AWS',
+        group: 'Frontend frameworks',
         items: [
-            'Lambda', 'KMS', 'SES', 'Cognito', 'Amplify', 'API Gateway', 'S3', 'RDS'
+            'VueJS', 'Flutter', 'Angular', 'React Native'
         ]
     },
     {
@@ -17,9 +17,9 @@ const technologies: Technology[] = [
         ]
     },
     {
-        group: 'Frontend frameworks',
+        group: 'Web',
         items: [
-            'VueJS', 'Flutter', 'Angular', 'React Native'
+            'HTML', 'CSS', 'Sass', 'Tailwind', 'Bootstrap'
         ]
     },
     {
@@ -29,15 +29,11 @@ const technologies: Technology[] = [
         ]
     },
     {
-        group: 'Web',
-        items: [
-            'HTML', 'CSS', 'Sass', 'Tailwind', 'Bootstrap'
-        ]
-    },
-    {
         group: 'Other',
         items: [
-            'Keycloak', 'Docker', 'Liquibase', 'Git'
+            'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'AWS Lambda', 'AWS KMS',
+            'AWS SES', 'AWS Cognito', 'AWS Amplify', 'AWS API Gateway', 'AWS S3', 'AWS RDS',
+            'Postgresql', 'Firebase', 'Django'
         ]
     }
 ];
@@ -46,17 +42,10 @@ export const getTechnologiesString = (): string => {
     return technologies.map((t) => t.items.join(' ')).join(' ');
 };
 
-export const getFrontendFrameworks = (): string[] => {
-  const t: Technology =  technologies.filter((t) => t.group === 'Frontend frameworks')[0];
-  return t.items;
-};
+export const getTechnologies = (): Technology[] => {
+    return technologies.filter((t) => t.group !== 'Other');
+}
 
-export const getLanguages = (): string[] => {
-    const t: Technology =  technologies.filter((t) => t.group === 'Languages')[0];
-    return t.items;
-};
-
-export const getBlockchain = (): string[] => {
-    const t: Technology =  technologies.filter((t) => t.group === 'Blockchain')[0];
-    return t.items;
-};
+export const getOtherTechnologies = (): Technology => {
+    return technologies.filter((t) => t.group === 'Other')[0];
+}
