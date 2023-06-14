@@ -56,3 +56,10 @@ h2 {
     color: $color-secondary;
   }
 }
+
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  white-space: nowrap;
+}
