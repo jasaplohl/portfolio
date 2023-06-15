@@ -10,15 +10,13 @@
 }
 
 .section {
-
+  width: 75%;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-.gradient-primary {
-  background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
-}
-
-.gradient-secondary {
-  background: linear-gradient(0deg, $color-secondary 0%, $color-primary 100%);
+.gradient {
+  background: linear-gradient(0deg, $color-primary-dark 0%, $color-secondary 100%);
 }
 
 .text-vertical {
@@ -36,4 +34,10 @@
   border-radius: 1rem;
   user-select: none;
   word-break: break-all;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .section {
+    width: 95%;
+  }
 }

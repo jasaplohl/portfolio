@@ -1,11 +1,13 @@
 <script lang="ts" setup>
+import NavigationComponent from "@/components/NavigationComponent.vue";
 // TODO: ChatGPT for my introduction
 </script>
 
 <template>
-  <div class="page page--center">
+  <div class="h-full flex justify-center items-center">
+    <div class="section gradient">
+    <NavigationComponent />
     <h1>About me</h1>
-    <div class="page--center">
       <p>
         Welcome to my portfolio! My name is Jaša Plohl. I'm a full stack developer based in Kranj, Slovenia.
       </p>
