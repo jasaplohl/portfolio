@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import FooterComponent from "@/components/FooterComponent.vue";
 </script>
 
 <template>
@@ -11,8 +10,6 @@ import FooterComponent from "@/components/FooterComponent.vue";
     <div class="submit">
       <button type="submit">Send</button>
     </div>
-    <!-- TODO: Rename from footer component -->
-    <FooterComponent />
   </form>
 </template>
 

@@ -2,10 +2,12 @@
 import { getTechnologiesString } from '@/data/technologies';
 import type {Ref} from "vue";
 import {onMounted, ref} from "vue";
-import NavigationComponent from "@/components/NavigationComponent.vue";
-import {useRoute, RouterLink} from "vue-router";
+import IntroductionView from '@/views/introduction/IntroductionView.vue';
+import AboutView from '@/views/about/AboutView.vue';
+import ProjectsViewVue from '@/views/projects/ProjectsView.vue';
+import ContactView from '@/views/contact/ContactView.vue';
+import FooterComponent from "@/components/FooterComponent.vue";
 
-const route = useRoute();
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
 
 onMounted(() => {
@@ -52,20 +54,13 @@ function draw(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: n
 </script>
 
 <template>
-  <main class="h-screen relative">
+  <main class="h-screen relative overflow-x-hidden">
     <canvas ref="canvasElement"></canvas>
-    <div class="h-full flex justify-center items-center">
-      <div class="section">
-        <RouterView v-if="route.fullPath === '/'" />
-        <div v-else>
-          <RouterLink to="/" class="back-button"><i class='bx bx-left-arrow-alt'/></RouterLink>
-          <div class="gradient">
-            <NavigationComponent />
-            <RouterView />
-          </div>
-        </div>
-      </div>
-    </div>
+    <IntroductionView />
+    <AboutView />
+    <ProjectsViewVue />
+    <ContactView />
+    <FooterComponent />
   </main>
 </template>
 

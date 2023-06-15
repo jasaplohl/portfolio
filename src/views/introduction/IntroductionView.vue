@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <div class="h-full flex flex-col items-center justify-center">
+  <div class="h-screen flex flex-col items-center justify-center">
     <h1>
       Hello, I'm <span class="font-bold">Jaša Plohl</span>.
       <br/>
@@ -12,4 +12,3 @@ import { RouterLink } from "vue-router";
     <RouterLink to="/about">View more <i class='bx bx-right-arrow-alt'/></RouterLink>
   </div>
 </template>
-

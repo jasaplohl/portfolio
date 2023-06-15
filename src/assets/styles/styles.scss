@@ -22,6 +22,10 @@
   background: linear-gradient(0deg, $color-primary-dark 0%, $color-secondary 100%);
 }
 
+.gradient-alternate {
+  background: linear-gradient(0deg, $color-secondary 0%, $color-primary-dark 100%);
+}
+
 .text-vertical {
   writing-mode: vertical-rl;
   text-orientation: upright;
