@@ -1,0 +1,18 @@
+@import "variables";
+
+::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+// Background
+::-webkit-scrollbar-track {
+  background-color: $color-secondary;
+  border-radius: 0.5rem;
+}
+
+// Draggable
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: 0.5rem;
+}

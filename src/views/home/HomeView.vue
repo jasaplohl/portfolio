@@ -45,14 +45,14 @@ function draw(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: n
 </script>
 
 <template>
-  <main class="page relative">
-    <canvas ref="canvasElement" class="matrix-text"></canvas>
+  <main class="h-screen relative overflow-hidden">
+    <canvas ref="canvasElement"></canvas>
     <RouterView />
   </main>
 </template>
 
 <style lang="scss" scoped>
-.matrix-text {
+canvas {
   z-index: -1;
   position: absolute;
   opacity: 0.8;

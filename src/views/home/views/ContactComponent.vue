@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import FooterComponent from "@/components/FooterComponent.vue";
+</script>
 
 <template>
   <div class="contact w-full md:w-1/2">
@@ -10,6 +12,8 @@
       <div class="submit">
         <button type="submit">Send</button>
       </div>
+      <!-- TODO: Rename from footer component -->
+      <FooterComponent />
     </form>
   </div>
 </template>

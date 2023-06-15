@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-// TODO: get everything on the same page without scrolling.
-// TODO: View more -> router for the subpages (About me, projects ...)
 // TODO: ChatGPT for my introduction
 </script>
 
 <template>
-  <div class="page">
+  <div class="page page--center">
     <h1>About me</h1>
     <div class="page--center">
       <p>

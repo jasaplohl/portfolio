@@ -9,60 +9,16 @@
   src: url('../fonts/Geologica_Auto-Thin.ttf');
 }
 
-html {
-  font-family: 'geologica', sans-serif;
-  background-color: $color-secondary;
-  color: $color-primary;
+.section {
+
 }
 
-
-h1 {
-  font-size: 3rem;
+.gradient-primary {
+  background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
 }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.7rem;
-}
-
-::-webkit-scrollbar {
-  height: 0.5rem;
-  width: 0.5rem;
-}
-
-// Background
-::-webkit-scrollbar-track {
-  background-color: $color-secondary;
-  border-radius: 0.5rem;
-}
-
-// Draggable
-::-webkit-scrollbar-thumb {
-  background-color: $color-primary;
-  border-radius: 0.5rem;
-}
-
-.page {
-  min-height: 100vh;
-  padding: 1rem;
-
-  &--center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &--gradient-primary {
-    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
-  }
-
-  &--gradient-secondary {
-    background: linear-gradient(0deg, $color-secondary 0%, $color-primary 100%);
-  }
+.gradient-secondary {
+  background: linear-gradient(0deg, $color-secondary 0%, $color-primary 100%);
 }
 
 .text-vertical {
