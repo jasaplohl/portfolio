@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <div class="h-screen flex flex-col items-center justify-center">
+  <div class="min-h-screen flex flex-col items-center justify-center">
     <h1>
       Hello, I'm <span class="font-bold">Jaša Plohl</span>.
       <br/>

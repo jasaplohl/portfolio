@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="gradient">
+  <div class="min-h-screen gradient flex items-center">
     <div class="flex justify-between p-10 gap-10">
       <div>
         <h1>About me</h1>
