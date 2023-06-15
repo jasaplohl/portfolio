@@ -3,21 +3,19 @@ import {getTechnologies, getOtherTechnologies} from "@/data/technologies";
 </script>
 
 <template>
-  <div class="page page--center page--gradient-secondary">
-    <h2 class="text-black">I have experience with the following technologies</h2>
-    <div class="text-center flex gap-8">
-      <div v-for="tech of getTechnologies()" :key="tech.group">
-        <h3 class="text-black">{{ tech.group }}</h3>
-        <ul>
-          <li v-for="item of tech.items" :key="item">
-            <p class="pill mb-2">{{item}}</p>
-          </li>
-        </ul>
-      </div>
+  <h2 class="text-black">I have experience with the following technologies</h2>
+  <div class="text-center flex gap-8">
+    <div v-for="tech of getTechnologies()" :key="tech.group">
+      <h3 class="text-black">{{ tech.group }}</h3>
+      <ul>
+        <li v-for="item of tech.items" :key="item">
+          <p class="pill mb-2">{{item}}</p>
+        </li>
+      </ul>
     </div>
-    <h3>Other</h3>
-    <div class="columns-3 gap-6">
-      <p v-for="item of getOtherTechnologies().items" :key="item" class="pill mb-2">{{ item }}</p>
-    </div>
+  </div>
+  <h3>Other</h3>
+  <div class="columns-3 gap-6">
+    <p v-for="item of getOtherTechnologies().items" :key="item" class="pill mb-2">{{ item }}</p>
   </div>
 </template>

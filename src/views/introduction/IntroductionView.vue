@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 <template>
   <div class="h-full flex flex-col items-center justify-center">
     <h1>
-      Hello, I'm <span>Jaša Plohl</span>.
+      Hello, I'm <span class="font-bold">Jaša Plohl</span>.
       <br/>
       I'm a full-stack web developer.
     </h1>

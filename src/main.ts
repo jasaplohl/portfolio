@@ -4,7 +4,7 @@ import router from './router/router';
 
 import './assets/styles/styles.scss';
 import './assets/styles/elements.scss';
-import './assets/styles/styles.scss';
+import './assets/styles/scrollbar.scss';
 
 const app = createApp(App);
 

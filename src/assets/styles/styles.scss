@@ -10,9 +10,12 @@
 }
 
 .section {
+  height: 60%;
   width: 75%;
-  padding: 2rem;
-  border-radius: 1rem;
+  // padding: 2rem;
+  // border-radius: 1rem;
+  overflow: auto;
+  // overflow-x: hidden;
 }
 
 .gradient {

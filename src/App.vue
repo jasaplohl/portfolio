@@ -2,7 +2,10 @@
 import { getTechnologiesString } from '@/data/technologies';
 import type {Ref} from "vue";
 import {onMounted, ref} from "vue";
+import NavigationComponent from "@/components/NavigationComponent.vue";
+import {useRoute, RouterLink} from "vue-router";
 
+const route = useRoute();
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
 
 onMounted(() => {
@@ -14,7 +17,11 @@ onMounted(() => {
 const initCanvas = (canvas: HTMLCanvasElement) => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+  const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+
+  if (!ctx) {
+    throw new Error('Could not initialize canvas context!');
+  }
 
   const letters = getTechnologiesString().split('');
   const fontSize: number = 10;
@@ -45,16 +52,34 @@ function draw(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: n
 </script>
 
 <template>
-  <main class="h-screen relative overflow-hidden">
+  <main class="h-screen relative">
     <canvas ref="canvasElement"></canvas>
-    <RouterView />
+    <div class="h-full flex justify-center items-center">
+      <div class="section">
+        <RouterView v-if="route.fullPath === '/'" />
+        <div v-else>
+          <RouterLink to="/" class="back-button"><i class='bx bx-left-arrow-alt'/></RouterLink>
+          <div class="gradient">
+            <NavigationComponent />
+            <RouterView />
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
+@import 'src/assets/styles/variables';
+
 canvas {
   z-index: -1;
   position: absolute;
   opacity: 0.8;
+}
+
+.back-button {
+  background-color: $color-primary;
+  color: $color-secondary;
 }
 </style>
