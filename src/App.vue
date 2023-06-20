@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getTechnologiesString } from '@/data/technologies';
+import {getTechnologiesString} from '@/data/technologies';
 import type {Ref} from "vue";
 import {onMounted, ref} from "vue";
 import IntroductionView from '@/views/introduction/IntroductionView.vue';
@@ -9,6 +9,7 @@ import ContactView from '@/views/contact/ContactView.vue';
 import FooterComponent from "@/components/FooterComponent.vue";
 
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
+const aboutSection: Ref<HTMLElement | null> = ref(null);
 
 onMounted(() => {
   if (canvasElement.value) {
@@ -35,10 +36,10 @@ const initCanvas = (canvas: HTMLCanvasElement) => {
   }
   // Loop the animation
   setInterval(() => draw(ctx, canvas, drops, letters, fontSize), 33);
-}
+};
 
 // Setting up the draw function
-function draw(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: number[], letters: string[], fontSize: number) {
+const draw = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: number[], letters: string[], fontSize: number) => {
   ctx.fillStyle = 'rgba(0, 0, 0, .1)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < drops.length; i++) {
@@ -50,17 +51,25 @@ function draw(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: n
       drops[i] = 0;
     }
   }
-}
+};
+
+const onViewMore = () => {
+  aboutSection.value?.scrollIntoView({
+    behavior: 'smooth'
+  });
+};
 </script>
 
 <template>
   <main class="h-screen relative overflow-x-hidden">
     <canvas ref="canvasElement"></canvas>
-    <IntroductionView />
-    <AboutView />
-    <ProjectsViewVue />
-    <ContactView />
-    <FooterComponent />
+    <IntroductionView @view-more="onViewMore"/>
+    <div ref="aboutSection">
+      <AboutView />
+    </div>
+    <ProjectsViewVue/>
+    <ContactView/>
+    <FooterComponent/>
   </main>
 </template>
 

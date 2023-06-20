@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RouterLink } from "vue-router";
+const emits = defineEmits(['view-more']);
 </script>
 
 <template>
@@ -9,6 +9,6 @@ import { RouterLink } from "vue-router";
       <br/>
       I'm a full-stack web developer.
     </h1>
-    <RouterLink to="/about">View more <i class='bx bx-right-arrow-alt'/></RouterLink>
+    <button @click="emits('view-more')">View more <i class='bx bx-right-arrow-alt'/></button>
   </div>
 </template>
