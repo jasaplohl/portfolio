@@ -28,6 +28,17 @@ export const projects: Project[] = [
         imgUrl: '/images/projects/mint_website.png',
         url: 'https://mint.devleet.si',
         technologies: ['VueJS', 'Blockchain']
+    },
+    {
+        title: 'Moja Morela',
+        imgUrl: '/images/projects/moja_morela.png',
+        url: 'https://shopmorela.si/',
+        technologies: ['JavaScript', 'HTML', 'Sass']
+    },
+    {
+        title: 'I2GO',
+        imgUrl: '/images/projects/i2go.png',
+        technologies: ['Java', 'Android Studio', 'Delphi']
     }
 ];
 
