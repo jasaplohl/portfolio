@@ -10,11 +10,9 @@
 }
 
 .section {
-  height: 60%;
-  width: 75%;
-  // padding: 2rem;
-  // border-radius: 1rem;
-  overflow: auto;
+  max-width: 900px;
+  min-height: 100vh;
+  margin: auto;
   // overflow-x: hidden;
 }
 

@@ -2,7 +2,8 @@
 </script>
 
 <template>
-  <div>
+  <div class="section flex flex-col justify-center">
+    <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
     <h2>Contact</h2>
     <form>
       <input type="text" placeholder="Name" />

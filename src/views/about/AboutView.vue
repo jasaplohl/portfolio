@@ -9,8 +9,8 @@ const show = useElementVisibility(aboutSection);
 </script>
 
 <template>
-  <div ref="aboutSection" class="min-h-screen gradient flex items-center">
-    <div class="flex justify-between p-10 gap-10">
+  <div ref="aboutSection" class="gradient">
+    <div class="section flex justify-between items-center gap-10">
       <Transition name="slide-fade-left">
         <div v-if="show">
           <h1>About me</h1>
