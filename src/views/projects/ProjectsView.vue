@@ -1,6 +1,16 @@
 <script lang="ts" setup>
-import {personalProjects, projects} from "@/data/projects";
+import {Project, projects} from "@/data/projects";
 import ProjectCardComponent from "@/views/projects/components/ProjectCardComponent.vue";
+import type {ComputedRef} from "vue";
+import {computed} from "vue";
+
+const workProjects: ComputedRef<Project[]> = computed(() => {
+  return projects.filter((p: Project) => p.type === 'work');
+});
+
+const personalProjects: ComputedRef<Project[]> = computed(() => {
+  return projects.filter((p: Project) => p.type === 'personal');
+});
 </script>
 
 <template>
@@ -9,7 +19,7 @@ import ProjectCardComponent from "@/views/projects/components/ProjectCardCompone
       <h2>This are some of the projects I have worked on</h2>
       <ul>
         <ProjectCardComponent
-            v-for="project of projects"
+            v-for="project of workProjects"
             :key="project.title"
             :title="project.title"
             :technologies="project.technologies"
