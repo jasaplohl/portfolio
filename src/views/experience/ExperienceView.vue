@@ -5,10 +5,10 @@ import {getTechnologies, getOtherTechnologies} from "@/data/technologies";
 <template>
   <div class="gradient-alternate">
     <div class="section">
-      <h2 class="text-black">I have experience with the following technologies</h2>
+      <h2>I have experience with the following technologies</h2>
       <div class="text-center flex gap-8">
         <div v-for="tech of getTechnologies()" :key="tech.group">
-          <h3 class="text-black">{{ tech.group }}</h3>
+          <h3>{{ tech.group }}</h3>
           <ul>
             <li v-for="item of tech.items" :key="item">
               <p class="pill mb-2">{{item}}</p>

@@ -16,7 +16,7 @@ const personalProjects: ComputedRef<Project[]> = computed(() => {
 <template>
   <div class="gradient">
     <div class="section">
-      <h2>This are some of the projects I have worked on</h2>
+      <h2>Projects</h2>
       <ul>
         <ProjectCardComponent
             v-for="project of workProjects"

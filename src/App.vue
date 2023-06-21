@@ -8,9 +8,15 @@ import ProjectsViewVue from '@/views/projects/ProjectsView.vue';
 import ContactView from '@/views/contact/ContactView.vue';
 import FooterComponent from "@/components/FooterComponent.vue";
 import ExperienceView from "@/views/experience/ExperienceView.vue";
+import NavigationComponent from "@/components/NavigationComponent.vue";
 
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
+
+const homeSection: Ref<HTMLElement | null> = ref(null);
 const aboutSection: Ref<HTMLElement | null> = ref(null);
+const experienceSection: Ref<HTMLElement | null> = ref(null);
+const projectsSection: Ref<HTMLElement | null> = ref(null);
+const contactSection: Ref<HTMLElement | null> = ref(null);
 
 onMounted(() => {
   if (canvasElement.value) {
@@ -63,14 +69,23 @@ const onViewMore = () => {
 
 <template>
   <main class="h-screen relative overflow-x-hidden">
+    <NavigationComponent />
     <canvas ref="canvasElement"></canvas>
-    <IntroductionView @view-more="onViewMore"/>
+    <div ref="homeSection">
+      <IntroductionView @view-more="onViewMore"/>
+    </div>
     <div ref="aboutSection">
       <AboutView />
     </div>
-    <ExperienceView />
-    <ProjectsViewVue/>
-    <ContactView/>
+    <div ref="experienceSection">
+      <ExperienceView />
+    </div>
+    <div ref="projectsSection">
+      <ProjectsViewVue />
+    </div>
+    <div ref="contactSection">
+      <ContactView/>
+    </div>
     <FooterComponent/>
   </main>
 </template>

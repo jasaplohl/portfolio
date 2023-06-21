@@ -5,28 +5,35 @@ import { RouterLink } from "vue-router";
 <template>
   <div class="nav-row">
     <RouterLink
-        to="/about"
+        to="/"
+        class="nav-link"
+        active-class="nav-link--active"
+    >
+      Home
+    </RouterLink>
+    <RouterLink
+        to="/"
         class="nav-link"
         active-class="nav-link--active"
     >
       About me
     </RouterLink>
     <RouterLink
-        to="/projects"
+        to="/"
         class="nav-link"
         active-class="nav-link--active"
     >
       Projects
     </RouterLink>
     <RouterLink
-        to="/experience"
+        to="/"
         class="nav-link"
         active-class="nav-link--active"
     >
       Experience
     </RouterLink>
     <RouterLink
-        to="/contact"
+        to="/"
         class="nav-link"
         active-class="nav-link--active"
     >
@@ -39,10 +46,14 @@ import { RouterLink } from "vue-router";
 @import 'src/assets/styles/variables';
 
 .nav-row {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
   border-bottom: 1px solid $color-primary;
-  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: $color-secondary;
 }
 
 .nav-link {
@@ -52,9 +63,9 @@ import { RouterLink } from "vue-router";
   padding-block: 0.5rem;
   border-radius: 1rem 1rem 0 0;
 
-  &--active {
-    background-color: $color-primary;
-    color: $color-secondary;
-  }
+  //&--active {
+  //  background-color: $color-primary;
+  //  color: $color-secondary;
+  //}
 }
 </style>
