@@ -66,6 +66,7 @@ defineProps({
     width: 100%;
     height: 100%;
     background-color: rgba(black, 0.7);
+    backdrop-filter: blur(5px);
     padding: 0.5rem;
     transition: opacity 0.5s;
     overflow: auto;

@@ -1,0 +1,37 @@
+<script lang="ts" setup>
+</script>
+
+<template>
+  <div class="gradient-alternate">
+    <div class="section flex flex-col justify-center">
+      <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email address"/>
+        <textarea rows="10" placeholder="Message"/>
+        <div class="submit">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.contact {
+  padding: 2rem;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>

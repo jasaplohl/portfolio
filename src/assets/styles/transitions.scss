@@ -1,0 +1,21 @@
+// Slide fade right
+.slide-fade-right-enter-active {
+  opacity: 1;
+  transition: all 0.6s ease-out;
+}
+
+.slide-fade-right-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+// Slide fade left
+.slide-fade-left-enter-active {
+  opacity: 1;
+  transition: all 0.6s ease-out;
+}
+
+.slide-fade-left-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
