@@ -7,6 +7,7 @@ import AboutView from '@/views/about/AboutView.vue';
 import ProjectsViewVue from '@/views/projects/ProjectsView.vue';
 import ContactView from '@/views/contact/ContactView.vue';
 import FooterComponent from "@/components/FooterComponent.vue";
+import ExperienceView from "@/views/experience/ExperienceView.vue";
 
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
 const aboutSection: Ref<HTMLElement | null> = ref(null);
@@ -67,6 +68,7 @@ const onViewMore = () => {
     <div ref="aboutSection">
       <AboutView />
     </div>
+    <ExperienceView />
     <ProjectsViewVue/>
     <ContactView/>
     <FooterComponent/>

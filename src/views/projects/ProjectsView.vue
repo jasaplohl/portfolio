@@ -14,7 +14,7 @@ const personalProjects: ComputedRef<Project[]> = computed(() => {
 </script>
 
 <template>
-  <div class="gradient-alternate">
+  <div class="gradient">
     <div class="section">
       <h2>This are some of the projects I have worked on</h2>
       <ul>
