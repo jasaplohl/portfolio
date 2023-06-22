@@ -19,3 +19,15 @@
   transform: translateX(-100%);
   opacity: 0;
 }
+
+// Shake
+// TODO: Shaking animation
+.shake-enter-active,
+.shake-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.shake-enter-from,
+.shake-leave-to {
+  opacity: 0;
+}

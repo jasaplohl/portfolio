@@ -3,6 +3,7 @@ import FooterComponent from "@/components/FooterComponent.vue";
 import InputFieldComponent from "@/components/InputFieldComponent.vue";
 import type {Ref} from "vue";
 import {ref} from "vue";
+import { sendEmail } from '@/services/mailjet.service';
 
 const email: Ref<string> = ref('');
 const emailError: Ref<string | undefined> = ref(undefined);
@@ -13,7 +14,7 @@ const subjectError: Ref<string | undefined> = ref(undefined);
 const message: Ref<string> = ref('');
 const messageError: Ref<string | undefined> = ref(undefined);
 
-const onSubmit = () => {
+const onSubmit = async () => {
   emailError.value = undefined;
   subjectError.value = undefined;
   messageError.value = undefined;
@@ -23,11 +24,7 @@ const onSubmit = () => {
   const messageVal: string = message.value.trim();
 
   if (emailVal && subjectVal && messageVal) {
-    console.log({
-      email: emailVal,
-      subject: subjectVal,
-      message: messageVal,
-    });
+    await sendEmail(emailVal, subjectVal, messageVal);
   } else {
     emailError.value = emailVal ? undefined : 'Your email must not be empty!';
     subjectError.value = subjectVal ? undefined : 'The email subject must not be empty!';

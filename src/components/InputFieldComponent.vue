@@ -53,7 +53,9 @@ const getLabelClass: ComputedRef<string> = computed(() => {
       <label class="label" :class="getLabelClass">{{ label }}</label>
       <input :id="id" v-model="value" :type="type" class="input"  />
     </div>
-    <small v-if="errorMsg">{{ errorMsg }}</small>
+    <Transition name="shake">
+      <small v-if="errorMsg">{{ errorMsg }}</small>
+    </Transition>
   </div>
 </template>
 
