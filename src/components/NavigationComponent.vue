@@ -1,44 +1,21 @@
 <script lang="ts" setup>
-import { RouterLink } from "vue-router";
+const emits = defineEmits<{
+  (e: 'nav-click', value: string): void
+}>();
+
+const onNavBtnClick = (event: Event) => {
+  const value: string = (event.target as HTMLButtonElement).value;
+  emits('nav-click', value);
+}
 </script>
 
 <template>
   <div class="nav-row">
-    <RouterLink
-        to="/"
-        class="nav-link"
-        active-class="nav-link--active"
-    >
-      Home
-    </RouterLink>
-    <RouterLink
-        to="/"
-        class="nav-link"
-        active-class="nav-link--active"
-    >
-      About me
-    </RouterLink>
-    <RouterLink
-        to="/"
-        class="nav-link"
-        active-class="nav-link--active"
-    >
-      Projects
-    </RouterLink>
-    <RouterLink
-        to="/"
-        class="nav-link"
-        active-class="nav-link--active"
-    >
-      Experience
-    </RouterLink>
-    <RouterLink
-        to="/"
-        class="nav-link"
-        active-class="nav-link--active"
-    >
-      Contact
-    </RouterLink>
+    <button class="nav-btn" value="home" @click="onNavBtnClick">Home</button>
+    <button class="nav-btn" value="about" @click="onNavBtnClick">About me</button>
+    <button class="nav-btn" value="experience" @click="onNavBtnClick">Experience</button>
+    <button class="nav-btn" value="projects" @click="onNavBtnClick">Projects</button>
+    <button class="nav-btn" value="contact" @click="onNavBtnClick">Contact</button>
   </div>
 </template>
 
@@ -56,16 +33,10 @@ import { RouterLink } from "vue-router";
   background-color: $color-secondary;
 }
 
-.nav-link {
+.nav-btn {
   background-color: $color-secondary;
   color: $color-primary;
   padding-inline: 1rem;
   padding-block: 0.5rem;
-  border-radius: 1rem 1rem 0 0;
-
-  //&--active {
-  //  background-color: $color-primary;
-  //  color: $color-secondary;
-  //}
 }
 </style>

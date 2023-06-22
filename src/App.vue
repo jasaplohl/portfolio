@@ -61,7 +61,31 @@ const draw = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, drops: n
 };
 
 const onViewMore = () => {
-  aboutSection.value?.scrollIntoView({
+  onNavClick('about');
+};
+
+const onNavClick = (section: string) => {
+  let targetSection: HTMLElement;
+  switch (section) {
+    case 'home':
+      targetSection = homeSection.value!;
+      break;
+    case 'about':
+      targetSection = aboutSection.value!;
+      break;
+    case 'experience':
+      targetSection = experienceSection.value!;
+      break;
+    case 'projects':
+      targetSection = projectsSection.value!;
+      break;
+    case 'contact':
+      targetSection = contactSection.value!;
+      break;
+    default:
+      throw new Error(`Invalid section name: ${section}`);
+  }
+  targetSection.scrollIntoView({
     behavior: 'smooth'
   });
 };
@@ -69,7 +93,7 @@ const onViewMore = () => {
 
 <template>
   <main class="h-screen relative overflow-x-hidden">
-    <NavigationComponent />
+    <NavigationComponent @nav-click="onNavClick" />
     <canvas ref="canvasElement"></canvas>
     <div ref="homeSection">
       <IntroductionView @view-more="onViewMore"/>
