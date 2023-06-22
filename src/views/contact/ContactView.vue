@@ -5,27 +5,47 @@ import type {Ref} from "vue";
 import {ref} from "vue";
 
 const email: Ref<string> = ref('');
+const emailError: Ref<string | undefined> = ref(undefined);
+
 const subject: Ref<string> = ref('');
+const subjectError: Ref<string | undefined> = ref(undefined);
+
 const message: Ref<string> = ref('');
+const messageError: Ref<string | undefined> = ref(undefined);
 
 const onSubmit = () => {
-  console.log({
-    email: email.value,
-    subject: subject.value,
-    message: message.value,
-  });
+  emailError.value = undefined;
+  subjectError.value = undefined;
+  messageError.value = undefined;
+
+  const emailVal: string = email.value.trim();
+  const subjectVal: string = subject.value.trim();
+  const messageVal: string = message.value.trim();
+
+  if (emailVal && subjectVal && messageVal) {
+    console.log({
+      email: emailVal,
+      subject: subjectVal,
+      message: messageVal,
+    });
+  } else {
+    emailError.value = emailVal ? undefined : 'Your email must not be empty!';
+    subjectError.value = subjectVal ? undefined : 'The email subject must not be empty!';
+    messageError.value = messageVal ? undefined : 'Your message must not be empty!';
+  }
 }
 </script>
 
 <template>
   <div class="gradient-alternate">
     <div class="section flex flex-col justify-center">
-      <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
       <h2>Contact</h2>
+      <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
+      <br />
       <form @submit.prevent="onSubmit">
-        <InputFieldComponent v-model:value="email" type="email" label="Email address" />
-        <InputFieldComponent v-model:value="subject" type="text" label="Subject" />
-        <InputFieldComponent v-model:value="message" type="textarea" label="Message" />
+        <InputFieldComponent v-model:value="email" id="email" type="email" label="Email address" :error-msg="emailError" />
+        <InputFieldComponent v-model:value="subject" type="text" label="Subject" :error-msg="subjectError" />
+        <InputFieldComponent v-model:value="message" type="textarea" label="Message" :error-msg="messageError" />
         <div class="submit">
           <button type="submit" class="btn-primary">Send</button>
         </div>
