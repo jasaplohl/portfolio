@@ -110,7 +110,6 @@ const onNavClick = (section: string) => {
     <div ref="contactSection">
       <ContactView/>
     </div>
-    <FooterComponent/>
   </main>
 </template>
 

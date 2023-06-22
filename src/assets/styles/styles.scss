@@ -13,7 +13,7 @@
   max-width: 900px;
   min-height: 100vh;
   margin: auto;
-  // overflow-x: hidden;
+  padding-block: 4rem;
 }
 
 .gradient {
@@ -39,6 +39,14 @@
   border-radius: 1rem;
   user-select: none;
   word-break: break-all;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-secondary;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 @media (max-width: $breakpoint-tablet) {

@@ -12,7 +12,6 @@
 @import "src/assets/styles/variables";
 
 .footer {
-  background-color: $color-secondary;
   color: $color-primary;
   padding: 1rem;
 }
