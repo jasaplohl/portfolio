@@ -23,6 +23,8 @@ const icons = [
     'bx bxl-bitcoin',
 ];
 // TODO: Randomize order
+// TODO: Stop animation on hover
+// TODO: Display tooltip on icon hover, to display the name of the technology
 </script>
 
 <template>
