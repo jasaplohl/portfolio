@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-import type {PropType} from "vue";
+import type { PropType, Ref } from "vue";
+import { ref } from 'vue';
+
+const dialog: Ref<HTMLDialogElement | null> = ref(null);
 
 defineProps({
   title: {
@@ -20,74 +23,79 @@ defineProps({
     default: undefined,
   }
 });
+
+const onCardClick = () => {
+  dialog.value?.showModal();
+};
 </script>
 
 <template>
-  <a class="project-card" :href="url" target="_blank">
-    <div class="project-card--technologies">
-      <div class="project-card--technologies__container">
-        <p v-for="tech of technologies" :key="tech" class="pill">{{ tech }}</p>
-      </div>
+  <dialog class="dialog" ref="dialog">
+    <p>Hello</p>
+  </dialog>
+  <div class="card" @click="onCardClick">
+    <img :alt="title" :src="thumbnail" class="card--thumbnail"/>
+    <div class="card--overlay">
+      <p class="card--title">{{ title }}</p>
     </div>
-    <div class="p-4">
-      <img :alt="title" :src="thumbnail" class="project-card--thumbnail"/>
-      <p class="project-card--title">{{ title }}</p>
-    </div>
-  </a>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @import 'src/assets/styles/variables';
 
-.project-card {
+.card {
+  height: 20rem;
+  flex: 0 0 auto;
   position: relative;
-  overflow: hidden;
-  background-color: $color-secondary;
-  color: $color-primary;
-  border-radius: 1rem;
 
   &--thumbnail {
-    max-height: 10rem;
+    height: 100%;
+    object-fit: cover;
   }
 
-  &--title {
-    font-weight: bold;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-
-  &--technologies {
+  &--overlay {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: rgba(black, 0.7);
     backdrop-filter: blur(5px);
-    padding: 0.5rem;
-    transition: opacity 0.5s;
-    overflow: auto;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    &__container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-    }
+  &--title {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
   }
 
   &:hover {
-    .project-card--technologies {
+    cursor: pointer;
+
+    .card--overlay {
       visibility: visible;
       opacity: 1;
     }
   }
+}
+
+.dialog {
+  opacity: 0;
+  transition: opacity 2s;
+
+  &::backdrop {
+    background-color: rgba(black, 0.7);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.dialog[open] {
+  opacity: 1;
 }
 </style>
