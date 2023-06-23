@@ -33,7 +33,7 @@ const technologies: Technology[] = [
         items: [
             'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'AWS Lambda', 'AWS KMS',
             'AWS SES', 'AWS Cognito', 'AWS Amplify', 'AWS API Gateway', 'AWS S3', 'AWS RDS',
-            'Postgresql', 'Firebase', 'Django'
+            'Postgresql', 'Firebase', 'Django', 'Heroku'
         ]
     }
 ];

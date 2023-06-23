@@ -68,6 +68,7 @@ const closeDialog = () => {
     justify-content: center;
     background-color: rgba(black, 0.7);
     backdrop-filter: blur(5px);
+    transition: 0.5s;
   }
 
   &--title {
