@@ -3,7 +3,7 @@ import FooterComponent from "@/components/FooterComponent.vue";
 import InputFieldComponent from "@/components/InputFieldComponent.vue";
 import type {Ref} from "vue";
 import {ref} from "vue";
-import { sendEmail } from '@/services/mailjet.service';
+import { sendEmail } from '@/services/email.service';
 
 const email: Ref<string> = ref('');
 const emailError: Ref<string | undefined> = ref(undefined);
