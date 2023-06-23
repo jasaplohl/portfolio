@@ -21,10 +21,7 @@ const personalProjects: ComputedRef<Project[]> = computed(() => {
         <ProjectCardComponent
             v-for="project of workProjects"
             :key="project.title"
-            :title="project.title"
-            :technologies="project.technologies"
-            :thumbnail="project.imgUrl"
-            :url="project.url"
+            :project="project"
         />
       </ul>
       <h2>Personal projects</h2>
@@ -32,10 +29,7 @@ const personalProjects: ComputedRef<Project[]> = computed(() => {
         <ProjectCardComponent
             v-for="project of personalProjects"
             :key="project.title"
-            :title="project.title"
-            :technologies="project.technologies"
-            :thumbnail="project.imgUrl"
-            :url="project.url"
+            :project="project"
         />
       </ul>
     </div>
