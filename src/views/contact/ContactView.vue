@@ -4,6 +4,7 @@ import InputFieldComponent from "@/components/InputFieldComponent.vue";
 import type {Ref} from "vue";
 import {ref} from "vue";
 import { sendEmail } from '@/services/email.service';
+import InfiniteScrollComponent from '@/components/InfiniteScrollComponent.vue';
 
 const email: Ref<string> = ref('');
 const emailError: Ref<string | undefined> = ref(undefined);
@@ -36,6 +37,7 @@ const onSubmit = async () => {
 <template>
   <div class="gradient-alternate">
     <div class="section flex flex-col justify-center">
+      <InfiniteScrollComponent />
       <h2>Contact</h2>
       <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
       <br />

@@ -23,7 +23,7 @@ watch(isOutside, (value) => {
 
 <template>
   <div ref="aboutSection" class="gradient">
-    <div class="section flex justify-between items-center gap-10">
+    <div class="section flex flex-col md:flex-row md:justify-between items-center gap-10">
       <Transition name="slide-fade-left">
         <div v-if="show">
           <h1>About me</h1>

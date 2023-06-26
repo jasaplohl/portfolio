@@ -146,14 +146,10 @@ const getIconList = (): Item[] => {
     opacity: 0;
     transition: 0.5s;
     font-size: 1rem;
-    top: -30%;
+    top: -20%;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    background-color: $color-secondary;
-    padding-inline: 1rem;
-    padding-block: 0.2rem;
-    border-radius: 0.5rem;
   }
 
   &:hover {

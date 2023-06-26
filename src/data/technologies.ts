@@ -3,7 +3,7 @@ interface Technology {
     items: string[];
 }
 
-const technologies: Technology[] = [
+export const technologies: Technology[] = [
     {
         group: 'Frontend frameworks',
         items: [
@@ -29,11 +29,17 @@ const technologies: Technology[] = [
         ]
     },
     {
+        group: 'AWS',
+        items: [
+            'AWS Lambda', 'AWS KMS', 'AWS SES', 'AWS Cognito', 'AWS Amplify',
+            'AWS API Gateway', 'AWS S3', 'AWS RDS'
+        ]
+    },
+    {
         group: 'Other',
         items: [
-            'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'AWS Lambda', 'AWS KMS',
-            'AWS SES', 'AWS Cognito', 'AWS Amplify', 'AWS API Gateway', 'AWS S3', 'AWS RDS',
-            'Postgresql', 'Firebase', 'Django', 'Heroku'
+            'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'PostgreSQL', 'Firebase',
+            'Django', 'Heroku'
         ]
     }
 ];
@@ -42,10 +48,10 @@ export const getTechnologiesString = (): string => {
     return technologies.map((t) => t.items.join(' ')).join(' ');
 };
 
-export const getTechnologies = (): Technology[] => {
-    return technologies.filter((t) => t.group !== 'Other');
-}
-
-export const getOtherTechnologies = (): Technology => {
-    return technologies.filter((t) => t.group === 'Other')[0];
-}
+// export const getTechnologies = (): Technology[] => {
+//     return technologies.filter((t) => t.group !== 'Other');
+// }
+//
+// export const getOtherTechnologies = (): Technology => {
+//     return technologies.filter((t) => t.group === 'Other')[0];
+// }
