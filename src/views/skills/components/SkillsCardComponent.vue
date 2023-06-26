@@ -31,7 +31,7 @@ const expand: ComputedRef<boolean> = computed(() => {
         <h3 class="text-center select-none font-bold">{{ skill.group }}</h3>
       </div>
       <div class="skill-card--side skill-card--side__back">
-        <div class="grid grid-cols-3 gap-2">
+        <div class="grid grid-cols-2 gap-2">
           <p v-for="(sk, i) of skill.items" :key="i" class="pill">{{ sk }}</p>
         </div>
       </div>
