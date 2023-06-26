@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import type { ComputedRef } from 'vue';
+import { computed } from 'vue';
+
 const icons = [
     'bx bxl-typescript',
     'bx bxl-javascript',
@@ -23,16 +26,19 @@ const icons = [
     'bx bxl-bitcoin',
 ];
 // TODO: Randomize order
-// TODO: Stop animation on hover
 // TODO: Display tooltip on icon hover, to display the name of the technology
+
+// We add the same array twice, so that the animation is smooth
+const getIconList: ComputedRef<string[]> = computed(() => {
+  return [...icons, ...icons];
+});
 </script>
 
 <template>
   <div class="tag-list">
-    <div class="loop-slider">
-      <div class="inner">
-        <i v-for="icon of icons" :key="icon" :class="icon" />
-        <i v-for="icon of icons" :key="icon" :class="icon" />
+    <div class="inner">
+      <div v-for="icon of getIconList" :key="icon">
+        <i :class="icon" />
       </div>
     </div>
   </div>
@@ -45,23 +51,21 @@ const icons = [
   font-size: 3.5rem;
   width: 100%;
   display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  gap: 1rem 0;
-  position: relative;
-  padding: 1.5rem 0;
+  padding-block: 1.5rem;
   overflow: hidden;
 }
 
-.loop-slider {
-  .inner {
-    display: flex;
-    width: fit-content;
-    animation-name: loop;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: 'normal';
-    animation-duration: 15000ms;
+.inner {
+  display: flex;
+  width: fit-content;
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-duration: 16000ms;
+
+  &:hover {
+    animation-play-state: paused;
   }
 }
 
