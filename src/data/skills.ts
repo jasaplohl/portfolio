@@ -13,7 +13,7 @@ export const skills: Skill[] = [
     {
         group: 'Programming languages',
         items: [
-            'TypeScript', 'JavaScript', 'Python', 'Golang', 'Dart'
+            'TypeScript', 'JavaScript', 'Python', 'Golang', 'Dart', 'Java'
         ]
     },
     {
