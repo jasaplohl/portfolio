@@ -13,7 +13,7 @@ const onNavBtnClick = (event: Event) => {
   <div class="nav-row">
     <button class="nav-btn" value="home" @click="onNavBtnClick">Home</button>
     <button class="nav-btn" value="about" @click="onNavBtnClick">About me</button>
-    <button class="nav-btn" value="experience" @click="onNavBtnClick">Experience</button>
+    <button class="nav-btn" value="skills" @click="onNavBtnClick">Skills</button>
     <button class="nav-btn" value="projects" @click="onNavBtnClick">Projects</button>
     <button class="nav-btn" value="contact" @click="onNavBtnClick">Contact</button>
   </div>

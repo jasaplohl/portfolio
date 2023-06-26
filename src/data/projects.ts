@@ -18,26 +18,6 @@ export interface Project {
 export const projects: Project[] = [
     {
         type: 'work',
-        title: 'WhiteHydrogen website',
-        description: '',
-        startDate: new Date(),
-        endDate: new Date(),
-        imgUrl: '/images/projects/white_hydrogen_website.png',
-        url: 'https://www.whiteh2coin.com/',
-        technologies: ['VueJS', 'AWS']
-    },
-    {
-        type: 'work',
-        title: 'WhiteHydrogen dashboard',
-        description: '',
-        startDate: new Date(),
-        endDate: new Date(),
-        imgUrl: '/images/projects/white_hydrogen_dashboard.png',
-        url: 'https://app.whiteh2coin.com/',
-        technologies: ['Python', 'Django', 'Blockchain']
-    },
-    {
-        type: 'work',
         title: 'WhiteHydrogen platform',
         description: '',
         startDate: new Date(),
@@ -54,6 +34,26 @@ export const projects: Project[] = [
         imgUrl: '/images/projects/mint_website.png',
         url: 'https://mint.devleet.si',
         technologies: ['VueJS', 'Blockchain']
+    },
+    {
+        type: 'work',
+        title: 'WhiteHydrogen dashboard',
+        description: '',
+        startDate: new Date(),
+        endDate: new Date(),
+        imgUrl: '/images/projects/white_hydrogen_dashboard.png',
+        url: 'https://app.whiteh2coin.com/',
+        technologies: ['Python', 'Django', 'Blockchain']
+    },
+    {
+        type: 'work',
+        title: 'WhiteHydrogen website',
+        description: '',
+        startDate: new Date(),
+        endDate: new Date(),
+        imgUrl: '/images/projects/white_hydrogen_website.png',
+        url: 'https://www.whiteh2coin.com/',
+        technologies: ['VueJS', 'AWS']
     },
     {
         type: 'work',

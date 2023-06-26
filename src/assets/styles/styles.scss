@@ -10,7 +10,7 @@
 }
 
 .section {
-  max-width: 900px;
+  max-width: $breakpoint-tablet;
   min-height: 100vh;
   margin: auto;
   padding-block: 4rem;
