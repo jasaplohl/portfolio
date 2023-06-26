@@ -1,9 +1,9 @@
-interface Technology {
+export interface Skill {
     group: string;
     items: string[];
 }
 
-export const technologies: Technology[] = [
+export const skills: Skill[] = [
     {
         group: 'Frontend frameworks',
         items: [
@@ -11,7 +11,7 @@ export const technologies: Technology[] = [
         ]
     },
     {
-        group: 'Languages',
+        group: 'Programming languages',
         items: [
             'TypeScript', 'JavaScript', 'Python', 'Golang', 'Dart'
         ]
@@ -45,13 +45,5 @@ export const technologies: Technology[] = [
 ];
 
 export const getTechnologiesString = (): string => {
-    return technologies.map((t) => t.items.join(' ')).join(' ');
+    return skills.map((t: Skill) => t.items.join(' ')).join(' ');
 };
-
-// export const getTechnologies = (): Technology[] => {
-//     return technologies.filter((t) => t.group !== 'Other');
-// }
-//
-// export const getOtherTechnologies = (): Technology => {
-//     return technologies.filter((t) => t.group === 'Other')[0];
-// }

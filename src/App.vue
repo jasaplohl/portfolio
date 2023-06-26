@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import {getTechnologiesString} from '@/data/technologies';
+import {getTechnologiesString} from '@/data/skills';
 import type {Ref} from "vue";
 import {onMounted, ref} from "vue";
 import IntroductionView from '@/views/introduction/IntroductionView.vue';
 import AboutView from '@/views/about/AboutView.vue';
 import ProjectsViewVue from '@/views/projects/ProjectsView.vue';
 import ContactView from '@/views/contact/ContactView.vue';
-import FooterComponent from "@/components/FooterComponent.vue";
-import ExperienceView from "@/views/experience/ExperienceView.vue";
 import NavigationComponent from "@/components/NavigationComponent.vue";
+import SkillsView from '@/views/skills/SkillsView.vue';
 
 const canvasElement: Ref<HTMLCanvasElement | null> = ref(null);
 
 const homeSection: Ref<HTMLElement | null> = ref(null);
 const aboutSection: Ref<HTMLElement | null> = ref(null);
-const experienceSection: Ref<HTMLElement | null> = ref(null);
+const skillsSection: Ref<HTMLElement | null> = ref(null);
 const projectsSection: Ref<HTMLElement | null> = ref(null);
 const contactSection: Ref<HTMLElement | null> = ref(null);
 
@@ -73,8 +72,8 @@ const onNavClick = (section: string) => {
     case 'about':
       targetSection = aboutSection.value!;
       break;
-    case 'experience':
-      targetSection = experienceSection.value!;
+    case 'skills':
+      targetSection = skillsSection.value!;
       break;
     case 'projects':
       targetSection = projectsSection.value!;
@@ -101,8 +100,8 @@ const onNavClick = (section: string) => {
     <div ref="aboutSection">
       <AboutView />
     </div>
-    <div ref="experienceSection">
-      <ExperienceView />
+    <div ref="skillsSection">
+      <SkillsView />
     </div>
     <div ref="projectsSection">
       <ProjectsViewVue />
