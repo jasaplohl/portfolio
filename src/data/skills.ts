@@ -31,8 +31,7 @@ export const skills: Skill[] = [
     {
         group: 'AWS',
         items: [
-            'AWS Lambda', 'AWS KMS', 'AWS SES', 'AWS Cognito', 'AWS Amplify',
-            'AWS API Gateway', 'AWS S3', 'AWS RDS'
+            'Lambda', 'KMS', 'SES', 'Cognito', 'Amplify', 'API Gateway', 'S3', 'RDS'
         ]
     },
     {

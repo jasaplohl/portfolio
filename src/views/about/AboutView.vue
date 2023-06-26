@@ -1,24 +1,13 @@
 <script lang="ts" setup>
 import type {Ref} from "vue";
-import {ref, watch} from "vue";
-import {useElementVisibility, useMouseInElement} from "@vueuse/core";
+import {ref} from "vue";
+import {useElementVisibility} from "@vueuse/core";
 
 const aboutSection: Ref<HTMLDivElement | null> = ref(null);
-const imageContainer: Ref<HTMLDivElement | null> = ref(null);
-const showBackSide: Ref<boolean> = ref(false);
 
 const show = useElementVisibility(aboutSection);
-const { isOutside } = useMouseInElement(imageContainer);
 
 // TODO: ChatGPT for my introduction
-
-watch(isOutside, (value) => {
-  if (value) {
-    imageContainer.value?.classList.remove('rotate');
-  } else {
-    imageContainer.value?.classList.add('rotate');
-  }
-});
 </script>
 
 <template>
@@ -40,12 +29,7 @@ watch(isOutside, (value) => {
         </div>
       </Transition>
       <Transition name="slide-fade-right">
-        <div v-if="show" ref="imageContainer" class="image-container">
-          <img v-if="!showBackSide" alt="Avatar" src="/images/me.jpg" class="image-container--front" />
-          <div v-else class="image-container--back">
-            <p>The dark side</p>
-          </div>
-        </div>
+        <img v-if="show" alt="Avatar" src="/images/me.jpg" />
       </Transition>
     </div>
   </div>
@@ -54,33 +38,11 @@ watch(isOutside, (value) => {
 <style lang="scss" scoped>
 @import 'src/assets/styles/variables';
 
-.image-container {
+img {
   min-width: 15rem;
   min-height: 15rem;
   max-width: 15rem;
   max-height: 15rem;
-  transition: 0.7s;
-  
-  &:hover {
-    cursor: pointer;
-  }
-
-  &--front {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  &--back {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-}
-
-.rotate {
-  transform: rotateY(180deg);
+  border-radius: 50%;
 }
 </style>

@@ -31,7 +31,9 @@ const expand: ComputedRef<boolean> = computed(() => {
         <h3 class="text-center select-none font-bold">{{ skill.group }}</h3>
       </div>
       <div class="skill-card--side skill-card--side__back">
-        <p v-for="(sk, i) of skill.items" :key="i">{{ sk }}</p>
+        <div class="grid grid-cols-3 gap-2">
+          <p v-for="(sk, i) of skill.items" :key="i" class="pill">{{ sk }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -70,9 +72,12 @@ const expand: ComputedRef<boolean> = computed(() => {
     }
 
     &__back {
-      background-color: dodgerblue;
-      color: white;
+      background-color: $color-secondary;
       transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
     }
   }
 
