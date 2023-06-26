@@ -1,44 +1,111 @@
 <script lang="ts" setup>
-import type { ComputedRef } from 'vue';
-import { computed } from 'vue';
+interface Item {
+  title: string;
+  icon: string;
+}
 
-const icons = [
-    'bx bxl-typescript',
-    'bx bxl-javascript',
-    'bx bxl-nodejs',
-    'bx bxl-vuejs',
-    'bx bxl-postgresql',
-    'bx bxl-java',
-    'bx bxl-tailwind-css',
-    'bx bxl-aws',
-    'bx bxl-go-lang',
-    'bx bxl-docker',
-    'bx bxl-heroku',
-    'bx bxl-github',
-    'bx bxl-angular',
-    'bx bxl-sass',
-    'bx bxl-bootstrap',
-    'bx bxl-django',
-    'bx bxl-python',
-    'bx bxl-firebase',
-    'bx bxl-android',
-    'bx bxl-flutter',
-    'bx bxl-bitcoin',
+const scrollItems: Item[] = [
+  {
+    title: 'TypeScript',
+    icon: 'bx bxl-typescript',
+  },
+  {
+    title: 'JavaScript',
+    icon: 'bx bxl-javascript',
+  },
+  {
+    title: 'NodeJS',
+    icon: 'bx bxl-nodejs',
+  },
+  {
+    title: 'VueJS',
+    icon: 'bx bxl-vuejs',
+  },
+  {
+    title: 'PostgreSQL',
+    icon: 'bx bxl-postgresql',
+  },
+  {
+    title: 'Java',
+    icon: 'bx bxl-java',
+  },
+  {
+    title: 'Tailwind CSS',
+    icon: 'bx bxl-tailwind-css',
+  },
+  {
+    title: 'AWS',
+    icon: 'bx bxl-aws',
+  },
+  {
+    title: 'Golang',
+    icon: 'bx bxl-go-lang',
+  },
+  {
+    title: 'Docker',
+    icon: 'bx bxl-docker',
+  },
+  {
+    title: 'Heroku',
+    icon: 'bx bxl-heroku',
+  },
+  {
+    title: 'GitHub',
+    icon: 'bx bxl-github',
+  },
+  {
+    title: 'Angular',
+    icon: 'bx bxl-angular',
+  },
+  {
+    title: 'Sass',
+    icon: 'bx bxl-sass',
+  },
+  {
+    title: 'Bootstrap',
+    icon: 'bx bxl-bootstrap',
+  },
+  {
+    title: 'Django',
+    icon: 'bx bxl-django',
+  },
+  {
+    title: 'Python',
+    icon: 'bx bxl-python',
+  },
+  {
+    title: 'Firebase',
+    icon: 'bx bxl-firebase',
+  },
+  {
+    title: 'Android',
+    icon: 'bx bxl-android',
+  },
+  {
+    title: 'Flutter',
+    icon: 'bx bxl-flutter',
+  },
+  {
+    title: 'Bitcoin',
+    icon: 'bx bxl-bitcoin',
+  },
 ];
-// TODO: Randomize order
-// TODO: Display tooltip on icon hover, to display the name of the technology
 
 // We add the same array twice, so that the animation is smooth
-const getIconList: ComputedRef<string[]> = computed(() => {
-  return [...icons, ...icons];
-});
+const getIconList = (): Item[] => {
+  const randomizedItems: Item[] = scrollItems.sort(() => Math.random() - 0.5);
+  return [...randomizedItems, ...randomizedItems];
+};
 </script>
 
 <template>
   <div class="tag-list">
     <div class="inner">
-      <div v-for="icon of getIconList" :key="icon">
-        <i :class="icon" />
+      <div v-for="icon of getIconList()" :key="icon.title" class="item">
+        <div class="item--tooltip">
+          <p>{{ icon.title }}</p>
+        </div>
+        <i :class="icon.icon" />
       </div>
     </div>
   </div>
@@ -69,8 +136,35 @@ const getIconList: ComputedRef<string[]> = computed(() => {
   }
 }
 
-i {
+.item {
+  position: relative;
   margin-right: 1rem;
+
+  &--tooltip {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 1rem;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: $color-secondary;
+    padding-inline: 1rem;
+    padding-block: 0.2rem;
+    border-radius: 0.5rem;
+  }
+
+  &:hover {
+    cursor: help;
+
+    .item--tooltip {
+      user-select: none;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes loop {
