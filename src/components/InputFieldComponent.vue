@@ -44,6 +44,7 @@ const getLabelClass: ComputedRef<string> = computed(() => {
   if (props.value) {
     return 'label--top';
   }
+  return '';
 });
 </script>
 
