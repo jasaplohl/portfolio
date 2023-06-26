@@ -11,9 +11,15 @@ defineProps({
 </script>
 
 <template>
-  <!-- TODO: Flip card animation on hover -->
   <div class="skill-card">
-    <h3 class="text-center">{{ skill.group }}</h3>
+    <div class="skill-card--inner">
+      <div class="skill-card--side skill-card--side__front">
+        <h3 class="text-center">{{ skill.group }}</h3>
+      </div>
+      <div class="skill-card--side skill-card--side__back">
+        <p v-for="(sk, i) of skill.items" :key="i">{{ sk }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,10 +29,40 @@ defineProps({
 .skill-card {
   width: 50%;
   height: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $color-secondary;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+  &--inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &--side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    &__front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    &__back {
+      background-color: dodgerblue;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  }
+
+  &:hover {
+    .skill-card--inner {
+      transform: rotateY(180deg);
+    }
+  }
 }
 </style>
