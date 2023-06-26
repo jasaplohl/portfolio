@@ -1,20 +1,34 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue';
+import type { ComputedRef, PropType } from 'vue';
 import type { Skill } from '@/data/skills';
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
+  index: {
+    type: Number,
+    required: true,
+  },
+  maxIndex: {
+    type: Number,
+    required: true,
+  },
   skill: {
     type: Object as PropType<Skill>,
     required: true,
   }
 });
+
+// If the last item is in its own row -> expand the item to 2 columns
+const expand: ComputedRef<boolean> = computed(() => {
+  return props.index === props.maxIndex && props.index % 2 === 0;
+});
 </script>
 
 <template>
-  <div class="skill-card">
+  <div class="skill-card" :class="expand ? 'col-span-2' : ''">
     <div class="skill-card--inner">
       <div class="skill-card--side skill-card--side__front">
-        <h3 class="text-center">{{ skill.group }}</h3>
+        <h3 class="text-center select-none font-bold">{{ skill.group }}</h3>
       </div>
       <div class="skill-card--side skill-card--side__back">
         <p v-for="(sk, i) of skill.items" :key="i">{{ sk }}</p>
@@ -27,7 +41,7 @@ defineProps({
 @import '/src/assets/styles/variables';
 
 .skill-card {
-  width: 50%;
+  width: 100%;
   height: 20rem;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
@@ -46,10 +60,13 @@ defineProps({
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 0.5rem;
 
     &__front {
-      background-color: #bbb;
-      color: black;
+      background-color: $color-secondary;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     &__back {
