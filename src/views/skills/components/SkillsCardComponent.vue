@@ -65,10 +65,12 @@ const expand: ComputedRef<boolean> = computed(() => {
     border-radius: 0.5rem;
 
     &__front {
-      background-color: $color-secondary;
+      background: linear-gradient(-45deg, $color-primary-dark, $color-primary-semidark, $color-secondary);
+      background-size: 400% 400%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      animation: gradient 5s ease infinite;
     }
 
     &__back {
@@ -85,6 +87,18 @@ const expand: ComputedRef<boolean> = computed(() => {
     .skill-card--inner {
       transform: rotateY(180deg);
     }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
   }
 }
 </style>

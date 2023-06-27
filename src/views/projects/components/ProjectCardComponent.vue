@@ -5,6 +5,8 @@ import type { Project } from '@/data/projects';
 
 const dialog: Ref<HTMLDialogElement | null> = ref(null);
 
+// TODO: Make the project cards a carousel
+
 defineProps({
   project: {
     type: Object as PropType<Project>,
@@ -149,6 +151,12 @@ const closeDialog = () => {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .card {
+    width: 100%;
   }
 }
 </style>
