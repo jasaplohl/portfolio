@@ -28,7 +28,7 @@ const onNavBtnClick = (event: Event) => {
       <span>Projects</span>
     </button>
     <button class="nav-btn" value="contact" @click="onNavBtnClick">
-      <i class='bx bx-message' />
+      <i class='bx bx-envelope' />
       <span>Contact</span>
     </button>
   </div>

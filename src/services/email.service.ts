@@ -1,22 +1,28 @@
-import * as client from '@sendgrid/mail';
 import type { MailDataRequired } from '@sendgrid/helpers/classes/mail';
-import {loadEnv} from "vite";
 
 export const sendEmail = async (fromAddress: string, subject: string, message: string): Promise<void> => {
-    // console.log(process.env.SEND_GRID_API_KEY);
-    // console.log(process.env.VUE_APP_TEST);
-    // client.setApiKey(process.env.);
+    throw new Error('Not implemented yet');
     // const emailData: MailDataRequired = {
-    //     from: fromAddress,
     //     to: 'jasa.plohl@gmail.com',
-    //     subject: subject,
+    //     from: {
+    //         email: 'jasa.plohl@gmail.com',
+    //         name: 'Portfolio Website'
+    //     },
+    //     subject: `${fromAddress} - ${subject}`,
     //     text: message,
     //     html: `<p>${message}</p>` // TODO: HTML template
     // };
     // try {
-    //     const res = await client.send(emailData);
+    //     const res: Response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': `Bearer ${import.meta.env.VITE_SENDGRID_API_KEY}`,
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(emailData),
+    //     });
     //     console.log(res);
-    // } catch(err) {
+    // } catch (err: any) {
     //     console.error(err);
     // }
 };
