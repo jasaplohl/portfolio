@@ -50,6 +50,9 @@ const next = () => {
       <ProjectCardComponent :project="projects[nextItem]" position="right" />
     </div>
   </div>
+  <div class="flex justify-center mt-2">
+    <small>{{ currentItemIndex + 1 }} of {{ projects.length }}</small>
+  </div>
 </template>
 
 <style lang="scss" scoped>
