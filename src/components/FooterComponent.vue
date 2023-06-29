@@ -1,8 +1,8 @@
 <template>
   <div class="footer mt-5">
     <div class="flex justify-center gap-4 mb-5">
-      <a href="https://github.com/jasaplohl" target="_blank"><i class="bx bxl-linkedin-square"/></a>
-      <a href="https://www.linkedin.com/in/jasa-plohl/" target="_blank"><i class="bx bxl-github"/></a>
+      <a href="https://www.linkedin.com/in/jasa-plohl" target="_blank"><i class="bx bxl-linkedin-square"/></a>
+      <a href="https://github.com/jasaplohl" target="_blank"><i class="bx bxl-github"/></a>
     </div>
     <p class="text-center">JAŠA PLOHL @2023</p>
   </div>

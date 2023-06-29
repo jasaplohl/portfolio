@@ -2,6 +2,12 @@
 
 The repository for my portfolio website.
 
+Stack used:
+- VueJS (composition API)
+- Typescript
+- TailWind
+- Scss
+
 ### Credits
 - [Matrix rain animation](https://codepen.io/yaclive/pen/EayLYO)
 - [Infinite icon scroll animation](https://codepen.io/ykadosh/pen/KKezJzz)

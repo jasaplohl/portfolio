@@ -77,9 +77,14 @@ export const projects: Project[] = [
     {
         type: 'personal',
         title: 'MovieWatch',
-        description: '',
-        startDate: new Date(),
-        endDate: new Date(),
+        description: `
+            A website displaying information about movies. 
+            It uses the TMDB API to get the relevant information.
+            The frontend framework used is Angular. It is deployed on
+            the GitHub pages.
+        `,
+        startDate: new Date('2022-1-19'),
+        endDate: new Date('2022-2-3'),
         imgUrl: '/images/projects/movie_watch.png',
         url: 'https://jasaplohl.github.io/movie-watch/',
         technologies: ['Angular', 'Github pages']
@@ -87,7 +92,13 @@ export const projects: Project[] = [
     {
         type: 'personal',
         title: 'MovieNight',
-        description: '',
+        description: `
+            A mobile application for browsing movie and TV show information. 
+            It is built with Flutter and uses the TMDB API to get the media information.
+            The app also enables user authentication with Google via Firebase. The
+            users can also add movies to favourites,watchlist and watch history. Firebase
+            is also used to store this information.
+        `,
         startDate: new Date(),
         endDate: new Date(),
         imgUrl: '/images/projects/movie_night.png',

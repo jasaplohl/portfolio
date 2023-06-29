@@ -2,6 +2,7 @@
 import type { PropType, Ref } from "vue";
 import { ref } from 'vue';
 import type { Project } from '@/data/projects';
+import { dateToLocalString } from '../../../services/date.service';
 
 const dialog: Ref<HTMLDialogElement | null> = ref(null);
 
@@ -29,13 +30,16 @@ const closeDialog = () => {
       <button @click="closeDialog" class="close-btn"><i class="bx bx-x" /></button>
     </div>
     <h3 class="font-bold">{{ project.title }}</h3>
+    <small>{{ dateToLocalString(project.startDate) }} - {{ dateToLocalString(project.endDate) }}</small>
     <div class="flex justify-center">
       <img :alt="project.title" :src="project.imgUrl"/>
     </div>
     <div class="flex justify-center flex-wrap gap-2 py-2">
       <p v-for="tech of project.technologies" :key="tech" class="pill">{{ tech }}</p>
     </div>
+    <p v-if="project.description">{{ project.description }}</p>
   </dialog>
+
   <div class="card" @click="openDialog">
     <img :alt="project.title" :src="project.imgUrl" class="card--thumbnail"/>
     <div class="card--overlay">
