@@ -1,17 +1,30 @@
 <script lang="ts" setup>
-import type { PropType, Ref } from "vue";
-import { ref } from 'vue';
+import type { ComputedRef, PropType, Ref } from "vue";
+import { computed, ref } from 'vue';
 import type { Project } from '@/data/projects';
 import { dateToLocalString } from '../../../services/date.service';
 
 const dialog: Ref<HTMLDialogElement | null> = ref(null);
 
-// TODO: Make the project cards a carousel
-
-defineProps({
+const props = defineProps({
   project: {
     type: Object as PropType<Project>,
     required: true
+  },
+  position: {
+    type: String as PropType<'left' | 'right' | 'center'>,
+    required: true,
+  }
+});
+
+const thumbnailPosition: ComputedRef<string> = computed(() => {
+  switch (props.position) {
+    case 'left':
+      return 'justify-end';
+    case 'center':
+      return 'justify-center';
+    case 'right':
+      return 'justify-start';
   }
 });
 
@@ -40,7 +53,7 @@ const closeDialog = () => {
     <p v-if="project.description">{{ project.description }}</p>
   </dialog>
 
-  <div class="card" @click="openDialog">
+  <div class="card" :class="thumbnailPosition" @click="openDialog">
     <img :alt="project.title" :src="project.imgUrl" class="card--thumbnail"/>
     <div class="card--overlay">
       <p class="card--title">{{ project.title }}</p>
@@ -52,9 +65,10 @@ const closeDialog = () => {
 @import 'src/assets/styles/variables';
 
 .card {
-  height: 20rem;
-  flex: 0 0 auto;
+  height: 100%;
+  width: 100%;
   position: relative;
+  display: flex;
 
   &--thumbnail {
     height: 100%;
