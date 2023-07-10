@@ -1,4 +1,5 @@
 export interface Project {
+    device: 'web' | 'mobile',
     type: 'personal' | 'work';
     title: string;
     description: string;
@@ -17,6 +18,7 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        device: 'web',
         type: 'work',
         title: 'WhiteHydrogen platform',
         description: '',
@@ -26,6 +28,7 @@ export const projects: Project[] = [
         technologies: ['VueJS', 'AWS', 'Stripe', 'Blockchain', 'Onfido', 'Tatum']
     },
     {
+        device: 'web',
         type: 'work',
         title: 'NFT minting platform',
         description: '',
@@ -36,6 +39,7 @@ export const projects: Project[] = [
         technologies: ['VueJS', 'Blockchain']
     },
     {
+        device: 'web',
         type: 'work',
         title: 'WhiteHydrogen dashboard',
         description: '',
@@ -46,6 +50,7 @@ export const projects: Project[] = [
         technologies: ['Python', 'Django', 'Blockchain']
     },
     {
+        device: 'web',
         type: 'work',
         title: 'WhiteHydrogen website',
         description: '',
@@ -56,6 +61,7 @@ export const projects: Project[] = [
         technologies: ['VueJS', 'AWS']
     },
     {
+        device: 'web',
         type: 'work',
         title: 'Moja Morela',
         description: '',
@@ -66,6 +72,7 @@ export const projects: Project[] = [
         technologies: ['JavaScript', 'HTML', 'Sass']
     },
     {
+        device: 'mobile',
         type: 'work',
         title: 'I2GO',
         description: '',
@@ -75,6 +82,7 @@ export const projects: Project[] = [
         technologies: ['Java', 'Android Studio', 'Delphi']
     },
     {
+        device: 'web',
         type: 'personal',
         title: 'MovieWatch',
         description: `
@@ -90,6 +98,7 @@ export const projects: Project[] = [
         technologies: ['Angular', 'Github pages']
     },
     {
+        device: 'mobile',
         type: 'personal',
         title: 'MovieNight',
         description: `
