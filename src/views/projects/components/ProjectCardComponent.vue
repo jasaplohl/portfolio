@@ -37,7 +37,7 @@ const closeDialog = () => {
     </div>
     <h4 v-if="project.description" v-html="project.description"></h4>
     <div class="flex justify-end mt-3">
-      <a v-if="project.url" :href="project.url" target="_blank"><h4>View more <i class='bx bx-link-external' /></h4></a>
+      <a v-if="project.url" :href="project.url" target="_blank">View more <i class='bx bx-link-external' /></a>
     </div>
   </dialog>
 
