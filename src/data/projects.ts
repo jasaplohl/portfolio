@@ -86,10 +86,12 @@ export const projects: Project[] = [
         type: 'personal',
         title: 'MovieWatch',
         description: `
-            A website displaying information about movies. 
-            It uses the TMDB API to get the relevant information.
-            The frontend framework used is Angular. It is deployed on
-            the GitHub pages.
+            A dynamic web application built with Angular, enabling the users to explore
+            detailed information about movies, TV shows and actors. It was developed
+            as a personal project to enhance my Angular skills.
+            <br/><br/>
+            All the data displayed on the application is provided by the TMDB API.
+            The application is deployed on the GitHub pages.
         `,
         startDate: new Date('2022-1-19'),
         endDate: new Date('2022-2-3'),
@@ -102,11 +104,12 @@ export const projects: Project[] = [
         type: 'personal',
         title: 'MovieNight',
         description: `
-            A mobile application for browsing movie and TV show information. 
-            It is built with Flutter and uses the TMDB API to get the media information.
-            The app also enables user authentication with Google via Firebase. The
-            users can also add movies to favourites,watchlist and watch history. Firebase
-            is also used to store this information.
+            MovieNight is a mobile app built with Flutter that lets you browse and explore movie 
+            and TV show information. Powered by the TMDB API, it provides comprehensive 
+            details about synopses, ratings, cast, and more.
+            <br/><br/>
+            You can authenticate using Google via Firebase and personalize your experience by adding 
+            favorites, watchlist, and watch history. Your selections are securely stored using Firestore.
         `,
         startDate: new Date(),
         endDate: new Date(),

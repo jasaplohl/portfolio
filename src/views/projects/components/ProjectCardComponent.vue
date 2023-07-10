@@ -35,7 +35,10 @@ const closeDialog = () => {
     <div class="flex justify-center flex-wrap gap-2 py-2">
       <p v-for="tech of project.technologies" :key="tech" class="pill">{{ tech }}</p>
     </div>
-    <p v-if="project.description">{{ project.description }}</p>
+    <h4 v-if="project.description" v-html="project.description"></h4>
+    <div class="flex justify-end mt-3">
+      <a v-if="project.url" :href="project.url" target="_blank"><h4>View more <i class='bx bx-link-external' /></h4></a>
+    </div>
   </dialog>
 
   <div class="card" @click="openDialog">

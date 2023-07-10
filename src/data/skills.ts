@@ -7,13 +7,13 @@ export const skills: Skill[] = [
     {
         group: 'Frontend frameworks',
         items: [
-            'VueJS', 'Flutter', 'Angular', 'React Native'
+            'VueJS', 'Flutter', 'Angular', 'React Native', 'React'
         ]
     },
     {
         group: 'Programming languages',
         items: [
-            'TypeScript', 'JavaScript', 'Python', 'Golang', 'Dart', 'Java'
+            'TypeScript', 'JavaScript', 'Python', 'Golang', 'Dart', 'Java', 'C'
         ]
     },
     {
@@ -38,7 +38,7 @@ export const skills: Skill[] = [
         group: 'Other',
         items: [
             'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'PostgreSQL', 'Firebase',
-            'Django', 'Heroku'
+            'Django', 'Heroku', 'Delphi'
         ]
     }
 ];
