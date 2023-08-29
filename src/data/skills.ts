@@ -37,7 +37,7 @@ export const skills: Skill[] = [
     {
         group: 'Other',
         items: [
-            'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'PostgreSQL', 'Firebase',
+            'Keycloak', 'Docker', 'Liquibase', 'Git', 'Atlassian', 'SQL', 'Firebase',
             'Django', 'Heroku', 'Delphi'
         ]
     }

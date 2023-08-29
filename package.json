@@ -9,7 +9,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "docker:compose": "docker compose up --build -d && docker image prune -f"
   },
   "dependencies": {
     "@sendgrid/helpers": "^7.7.0",
