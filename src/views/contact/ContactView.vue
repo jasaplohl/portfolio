@@ -39,16 +39,17 @@ const onSubmit = async () => {
     <div class="section flex flex-col justify-center">
       <InfiniteScrollComponent />
       <h2>Contact</h2>
-      <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>
-      <br />
-      <form @submit.prevent="onSubmit">
-        <InputFieldComponent v-model:value="email" id="email" type="email" label="Email address" :error-msg="emailError" />
-        <InputFieldComponent v-model:value="subject" type="text" label="Subject" :error-msg="subjectError" />
-        <InputFieldComponent v-model:value="message" type="textarea" label="Message" :error-msg="messageError" />
-        <div class="submit">
-          <button type="submit" class="btn-primary">Send</button>
-        </div>
-      </form>
+        <p>If you have any questions or wish to collaborate, contact me via <a href="https://www.linkedin.com/in/jasa-plohl" target="_blank">Linkedin.</a></p>
+<!--      <p>If you have any questions or wish to collaborate, contact me via the form bellow</p>-->
+<!--      <br />-->
+<!--      <form @submit.prevent="onSubmit">-->
+<!--        <InputFieldComponent v-model:value="email" id="email" type="email" label="Email address" :error-msg="emailError" />-->
+<!--        <InputFieldComponent v-model:value="subject" type="text" label="Subject" :error-msg="subjectError" />-->
+<!--        <InputFieldComponent v-model:value="message" type="textarea" label="Message" :error-msg="messageError" />-->
+<!--        <div class="submit">-->
+<!--          <button type="submit" class="btn-primary">Send</button>-->
+<!--        </div>-->
+<!--      </form>-->
       <FooterComponent />
     </div>
   </div>
