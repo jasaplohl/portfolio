@@ -8,6 +8,12 @@ Stack used:
 - TailWind
 - Scss
 
+## Deployment
+
+1. ```npm run build```
+2. (Optionally test the build ```firebase emulators:start```)
+3. ```firebase deploy```
+
 ### Credits
 - [Matrix rain animation](https://codepen.io/yaclive/pen/EayLYO)
 - [Infinite icon scroll animation](https://codepen.io/ykadosh/pen/KKezJzz)

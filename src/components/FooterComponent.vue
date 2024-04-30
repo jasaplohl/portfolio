@@ -4,7 +4,7 @@
       <a href="https://www.linkedin.com/in/jasa-plohl" target="_blank"><i class="bx bxl-linkedin-square"/></a>
       <a href="https://github.com/jasaplohl" target="_blank"><i class="bx bxl-github"/></a>
     </div>
-    <p class="text-center">JAŠA PLOHL @2023</p>
+    <p class="text-center">JAŠA PLOHL @2024</p>
   </div>
 </template>
 

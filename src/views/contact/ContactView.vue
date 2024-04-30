@@ -35,7 +35,7 @@ const onSubmit = async () => {
 </script>
 
 <template>
-  <div class="gradient-alternate">
+  <div class="gradient">
     <div class="section flex flex-col justify-center">
       <InfiniteScrollComponent />
       <h2>Contact</h2>

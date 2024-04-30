@@ -92,20 +92,20 @@ const onNavClick = (section: string) => {
 
 <template>
   <main class="h-screen relative overflow-x-hidden">
-    <NavigationComponent @nav-click="onNavClick" />
+<!--    <NavigationComponent @nav-click="onNavClick" />-->
     <canvas ref="canvasElement"></canvas>
     <div ref="homeSection">
       <IntroductionView @view-more="onViewMore"/>
     </div>
-    <div ref="aboutSection">
-      <AboutView />
-    </div>
-    <div ref="skillsSection">
-      <SkillsView />
-    </div>
-    <div ref="projectsSection">
-      <ProjectsViewVue />
-    </div>
+<!--    <div ref="aboutSection">-->
+<!--      <AboutView />-->
+<!--    </div>-->
+<!--    <div ref="skillsSection">-->
+<!--      <SkillsView />-->
+<!--    </div>-->
+<!--    <div ref="projectsSection">-->
+<!--      <ProjectsViewVue />-->
+<!--    </div>-->
     <div ref="contactSection">
       <ContactView/>
     </div>

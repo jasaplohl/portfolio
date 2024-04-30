@@ -9,6 +9,6 @@ const emits = defineEmits(['view-more']);
         <br/>
         I'm a full-stack web developer.
       </h1>
-      <button @click="emits('view-more')">View more <i class='bx bx-right-arrow-alt'/></button>
+<!--      <button @click="emits('view-more')">View more <i class='bx bx-right-arrow-alt'/></button>-->
   </div>
 </template>
