@@ -2,7 +2,7 @@
 import type { ComputedRef, PropType, Ref } from 'vue';
 import type { Project } from '@/data/projects';
 import { computed, ref } from 'vue';
-import ProjectCardComponent from '@/views/projects/components/ProjectCardComponent.vue';
+import ProjectCardComponent from '@/views/home/views/projects/components/ProjectCardComponent.vue';
 
 const currentProject: Ref<number> = ref(0);
 
@@ -42,7 +42,7 @@ const carouselInnerStyle: ComputedRef = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-@import 'src/assets/styles/variables';
+@import '/src/assets/styles/variables';
 
 .carousel {
   overflow: hidden;

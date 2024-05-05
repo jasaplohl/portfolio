@@ -36,7 +36,7 @@ const show = useElementVisibility(aboutSection);
 </template>
 
 <style lang="scss" scoped>
-@import 'src/assets/styles/variables';
+@import '/src/assets/styles/variables';
 
 img {
   min-width: 15rem;

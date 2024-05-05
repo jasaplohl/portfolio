@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { skills } from '@/data/skills';
-import SkillsCardComponent from '@/views/skills/components/SkillsCardComponent.vue';
+import SkillsCardComponent from '@/views/home/views/skills/components/SkillsCardComponent.vue';
 </script>
 
 <template>

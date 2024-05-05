@@ -2,7 +2,7 @@
 import {type Project, projects} from "@/data/projects";
 import type {ComputedRef} from "vue";
 import {computed} from "vue";
-import ProjectCarouselComponent from '@/views/projects/components/ProjectCarouselComponent.vue';
+import ProjectCarouselComponent from '@/views/home/views/projects/components/ProjectCarouselComponent.vue';
 
 const workProjects: ComputedRef<Project[]> = computed(() => {
   return projects.filter((p: Project) => p.type === 'work');

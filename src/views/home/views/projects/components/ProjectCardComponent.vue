@@ -50,7 +50,7 @@ const closeDialog = () => {
 </template>
 
 <style lang="scss" scoped>
-@import 'src/assets/styles/variables';
+@import '/src/assets/styles/variables';
 
 .card {
   width: 100%;
